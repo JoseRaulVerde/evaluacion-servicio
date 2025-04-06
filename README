@@ -1,0 +1,80 @@
+# Evaluación Desarrollador - Servicio 4.1
+
+Este proyecto fue desarrollado como parte de una evaluación técnica para el perfil de desarrollador.
+
+## 🧠 Descripción
+
+El objetivo principal del proyecto es exponer un servicio en la ruta:
+
+```
+http://localhost/evaluacion-servicio/
+```
+
+Este servicio debe retornar una respuesta en formato JSON estructurada correctamente.
+
+### Ejemplo de respuesta esperada:
+
+```json
+{
+  "codigo_respuesta": 0,
+  "mensaje": "Ok",
+  "listaobjetos": [
+    {
+      "tipo": "carro",
+      "tamanio": "Grande",
+      "color": "Green"
+    },
+    ...
+  ]
+}
+```
+
+También existe la opción de exportar esta información como un archivo `.json`.
+
+---
+
+## 🔧 Mejoras realizadas (rama `dev1`)
+
+- Se corrigió la generación de respuesta para cumplir con el formato esperado.
+- Se aplicaron buenas prácticas de codificación.
+- Se mejoró la estructura general de las clases.
+- Se agregaron comentarios a las líneas modificadas o agregadas.
+
+Puedes revisar todos los cambios directamente en la rama `dev1`.
+
+---
+
+## 🚀 ¿Cómo probar el proyecto?
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/JoseRaulVerde/evaluacion-servicio
+   cd evaluacion-servicio
+   ```
+
+2. Asegúrate de que tu servidor (XAMPP, WAMP, etc.) esté ejecutando Apache y que `evaluacion-servicio/` esté dentro de tu carpeta `htdocs`.
+
+3. Abre en tu navegador:
+   ```
+   http://localhost/evaluacion-servicio/
+   ```
+
+---
+
+## 📂 Estructura general
+
+- `modelo/valida.php` → clase que genera y exporta respuestas
+- `datos/objeto.php` → clase que simula datos de objetos
+- `api.php` → clase principal que gestiona las peticiones
+- `index.php` → punto de entrada para consumir el servicio
+
+---
+
+## 📌 Rama dev1
+
+Todos los cambios solicitados se encuentran en la rama `dev1`. Puedes verla aquí:
+
+👉 [Ver rama dev1](https://github.com/JoseRaulVerde/evaluacion-servicio)
+
+---
