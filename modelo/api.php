@@ -38,23 +38,28 @@
 			}				
 		}
 
+		// metodo de obtencion de objetos
 		public function MetodoGet(){			
 			try {
-				$ObjetoColor = new objeto();				
+				// obtencion de datos por medio de metodos
+				$ObjetoColor = (new objeto())->ObtenerObjeto();				
 				$Validar = new valida();
-				$Valor = [];
 				
-				$Validar->CreaRespuesta("0", "", $Valor);
+				$Validar->CreaRespuesta("0", "", $ObjetoColor);
 				
 				echo json_encode($Validar->ObtenerResponse(), JSON_PRETTY_PRINT  | JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
 			} catch (Exception $e) {
+				//retornar respuesta
 				$Validar->CreaRespuesta("-1", "Error", []);
+				echo json_encode($Validar->ObtenerResponse());
 			}
-			$Response = $Validar->ObtenerResponse();
 		}
+
 		public function exportar($nombreArchivo){
 			try{
 				$Validar = new valida();
+				// definir la variable
+				$ObjetoColor = new objeto();
 				$rutatemp = "temp/";
 				$ValorObjeto = $ObjetoColor->ObtenerObjeto();
 
@@ -67,7 +72,8 @@
 
 					//Define header information
 					header('Content-Description: File Transfer');
-					header('Content-Type: txt/html');
+					//guardado correctamente de archivo
+					header('Content-Type: application/json');
 					header("Cache-Control: no-cache, must-revalidate");
 					header("Expires: 0");
 					header('Content-Disposition: attachment; filename="'.basename($filePath).'"');

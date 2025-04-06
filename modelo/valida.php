@@ -9,6 +9,7 @@
 		public function __construct()
 		{			
 		}
+		// creacion de respuesta validando codigo
 		public function CreaRespuesta($codigo, $mensaje = "", $objeto = null){
 			switch ($codigo) {
 				case '0':
@@ -25,6 +26,7 @@
 
 		public function ObtenerResponse(){
 			//Aqui se retorna la respuesta
+			return $this->response;
 		}
 
 		public function ExportarJson($nombreArchivo){			
